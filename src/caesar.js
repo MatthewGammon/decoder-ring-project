@@ -7,6 +7,9 @@ const caesarModule = (function () {
   // you can add any code you want within this function scope
 
   function caesar(input, shift = 0, encode = true) {
+    if(shift === 0 || shift < -25 || shift > 25){
+      return false
+    }
     //taking the inputted string and making it lowercase so that it meets the "ignores capital letters" requirement.
     input = input.toLowerCase();
     // declaring an empty string that I will store my results in.
@@ -20,6 +23,7 @@ const caesarModule = (function () {
       //takes the result string and uses the String.fromCharCode method, passed in our character code from the previous line, to extract a string value that will have been shifted from the input, and adds this value to the result string.
       result += String.fromCharCode(characterCode);
     }
+    return result;
 
   }
 
