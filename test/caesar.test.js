@@ -34,17 +34,33 @@ describe("caesar", () => {
         const actual = caesarModule.caesar(input, shift);
         expect(actual).to.equal(expected);
     })
-    it("if encode is false, it returns an empty string", () => {
-        const input = "This is a test!";
+    it("if encode is false, it decodes the inputted message", () => {
+        const input = "abc first three should fail!";
         const shift = 3;
 
-        const expected = "";
+        const expected = "xyz cfopq qeobb pelria cxfi!";
         const actual = caesarModule.caesar(input, shift, false);
         expect(actual).to.equal(expected);
     })
     it("is a function", () => {
         const expected = "function";
         const actual = typeof caesarModule.caesar;
+        expect(actual).to.equal(expected);
+    })
+    it("should wrap around 'z' and begin shifting back at 'a' if the shift would push the value past 'z',", () => {
+        const input = "Thiz iz a tezt!";
+        const shift = 3;
+
+        const expected = "wklc lc d whcw!";
+        const actual = caesarModule.caesar("Thiz iz a tezt!", 3, true);
+        expect(actual).to.equal(expected);
+    })
+    it("should successfully encode a message if passed in a shift value that is negative", () => {
+        const input = "This is a test!";
+        const shift = -3;
+
+        const expected = "qefp fp x qbpq!";
+        const actual = caesarModule.caesar("This is a test!", -3, true);
         expect(actual).to.equal(expected);
     })
 });
