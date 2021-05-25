@@ -7,6 +7,7 @@ const caesarModule = (function () {
   // you can add any code you want within this function scope
 
   function caesar(input, shift = 0, encode = true) {
+    console.log(typeof caesar);
     if(shift === 0 || shift < -25 || shift > 25){
       return false
     }
@@ -16,13 +17,20 @@ const caesarModule = (function () {
     let result = "";
     //declaring a variable to use in my for loop that will be assigned the value of the character code at each index/character of the input string.
     let characterCode = 0;
+    if(encode){
     //using a for/of loop to perform actions on each individual character of the input string.
     for(let char of input){
       //uses the charCodeAt() method to return a number representing the character code of the character at each index of the string and adds the inputted shift number to the character code. This will create a new character code that is shifted to the left or right.
-      characterCode = char.charCodeAt() + shift;
+      characterCode = char.charCodeAt();
+      if(characterCode >= 97 && characterCode <= 122){
+        characterCode += shift;
+      } else {
+        characterCode = characterCode;
+      }
       //takes the result string and uses the String.fromCharCode method, passed in our character code from the previous line, to extract a string value that will have been shifted from the input, and adds this value to the result string.
       result += String.fromCharCode(characterCode);
     }
+  }
     return result;
 
   }
