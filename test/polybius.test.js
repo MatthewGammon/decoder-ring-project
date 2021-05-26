@@ -1,1 +1,1 @@
-// Write your tests here!
+const expect = require("chai").expect
