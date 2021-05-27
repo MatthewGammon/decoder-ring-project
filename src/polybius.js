@@ -20,6 +20,7 @@ const polybiusModule = (function () {
         let characterCode = char.charCodeAt();
         if(characterCode === 32){
           output += String.fromCharCode(characterCode);
+        } else {
           output += encoder[char]
         }
       }
@@ -52,6 +53,7 @@ const polybiusModule = (function () {
     }
   
   }
+
 
   return {
     polybius,
