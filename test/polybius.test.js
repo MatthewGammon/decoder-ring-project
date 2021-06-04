@@ -44,4 +44,11 @@ describe("polybius", () => {
         const actual = polybiusModule.polybius(input, false);
         expect(actual).to.equal(expected);
     })
+    it("should decode the given input if the encode parameter is set to false", () => {
+        const input = "44324234 4234 11 44513444";
+
+        const expected = "th(i/j)s (i/j)s a test";
+        const actual = polybiusModule.polybius(input, false);
+        expect(actual).to.equal(expected);
+    })
 });
