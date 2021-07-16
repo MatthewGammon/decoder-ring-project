@@ -12,3 +12,11 @@ A decoded message using the Polybius Cipher.
 ![Polybius Square](preview-images/polybius.png)
 An encoded message after providing a substitution alphabet in the Substitution Cipher.
 ![Substitution Cipher](preview-images/substitution-cipher.png)
+
+## Technology and Tools
+* JavaScript
+* HTML
+* Bootstrap
+* Mocha as a testing framework with Node
+* Chai assertion library in conjuction with Mocha
+* NYC as a coverage tool for unit testing
